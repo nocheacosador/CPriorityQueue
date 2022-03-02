@@ -57,7 +57,7 @@ void* PriorityQueue_Pop(PriorityQueue* queue);
  * @return data with the highest priority
  *         NULL if queue is empty
  */
-void* PriorityQueue_Peek(PriorityQueue* queue);
+void* PriorityQueue_Peek(const PriorityQueue* queue);
 
 /**
  * @brief Checks if queue is empty
@@ -65,7 +65,7 @@ void* PriorityQueue_Peek(PriorityQueue* queue);
  * @param queue pointer to a queue
  * @return 1 if empty, 0 if not empty
  */
-int PriorityQueue_IsEmpty(PriorityQueue* queue);
+int PriorityQueue_IsEmpty(const PriorityQueue* queue);
 
 /**
  * @brief Joins two queues together
@@ -91,4 +91,4 @@ typedef char* ToStringFunc(void*);
  *                     if NULL default function is used
  * @param stream where to print
  */
-void PriorityQueue_Print(PriorityQueue* queue, ToStringFunc* toStringFunc, FILE* stream);
+void PriorityQueue_Print(const PriorityQueue* queue, ToStringFunc* toStringFunc, FILE* stream);

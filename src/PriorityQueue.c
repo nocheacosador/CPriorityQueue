@@ -57,7 +57,7 @@ void* PriorityQueue_Pop(PriorityQueue* queue)
     return data;
 }
 
-void* PriorityQueue_Peek(PriorityQueue* queue)
+void* PriorityQueue_Peek(const PriorityQueue* queue)
 {
     assert(queue != NULL);
 
@@ -67,7 +67,7 @@ void* PriorityQueue_Peek(PriorityQueue* queue)
     return queue->first->data;
 }
 
-int PriorityQueue_IsEmpty(PriorityQueue* queue)
+int PriorityQueue_IsEmpty(const PriorityQueue* queue)
 {
     assert(queue != NULL);
 
@@ -122,7 +122,7 @@ static char* defaultToString(void* data)
     return buffer;
 }
 
-void PriorityQueue_Print(PriorityQueue* queue, ToStringFunc* toStringFunc, FILE* stream)
+void PriorityQueue_Print(const PriorityQueue* queue, ToStringFunc* toStringFunc, FILE* stream)
 {
     assert(queue != NULL);
 
