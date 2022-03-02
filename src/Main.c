@@ -31,7 +31,7 @@ int main()
     while (run) 
     {    
         printf("> ");
-        scanf("%s", buf);
+        scanf("%1023s", buf);
 
         if (!strcmp("insert", buf))
         {
@@ -54,7 +54,7 @@ int main()
                 Free(data);
             }
         }
-        else if (!strcmp("isEmpty", buf))
+        else if (!strcmp("is_empty", buf))
         {
             puts( PriorityQueue_IsEmpty(&queue[slotID]) ? "true" : "false" );
         }
@@ -121,12 +121,7 @@ int main()
     }
 
     for (int i = 0; i < 4; i++)
-    {
-        while (!PriorityQueue_IsEmpty(&queue[i]))
-        {
-            Free(PriorityQueue_Pop(&queue[i]));
-        }
-    }
+        PriorityQueue_Delete(&queue[i]);
 
     PrintMemoryAllocationReport();
 }

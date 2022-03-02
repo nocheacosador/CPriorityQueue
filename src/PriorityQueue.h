@@ -51,7 +51,7 @@ void PriorityQueue_Insert(PriorityQueue* queue, int priority, void* data);
 void* PriorityQueue_Pop(PriorityQueue* queue);
 
 /**
- * @brief Same as `PriorityQueue_Insert` just doesn't delete the data from the queue
+ * @brief Same as `PriorityQueue_Pop` just doesn't delete the data from the queue
  * 
  * @param queue pointer to a queue
  * @return data with the highest priority
@@ -66,6 +66,13 @@ void* PriorityQueue_Peek(const PriorityQueue* queue);
  * @return 1 if empty, 0 if not empty
  */
 int PriorityQueue_IsEmpty(const PriorityQueue* queue);
+
+/**
+ * @brief Deletes priority queue and frees all of it's members
+ * 
+ * @param queue pointer to priority queue
+ */
+void PriorityQueue_Delete(PriorityQueue* queue)
 
 /**
  * @brief Joins two queues together
@@ -86,9 +93,9 @@ typedef char* ToStringFunc(void*);
 /**
  * @brief Prints priority queue content to stream
  * 
- * @param queue1 pointer to a queue to be printed
+ * @param queue pointer to a queue to be printed
  * @param toStringFunc pointer to a function of type `ToStringFunc`,
- *                     if NULL default function is used
+ *                     if NULL - default function is used
  * @param stream where to print
  */
 void PriorityQueue_Print(const PriorityQueue* queue, ToStringFunc* toStringFunc, FILE* stream);

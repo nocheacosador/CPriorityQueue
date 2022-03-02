@@ -75,6 +75,12 @@ int PriorityQueue_IsEmpty(const PriorityQueue* queue)
     return queue->first == NULL;
 }
 
+void PriorityQueue_Delete(PriorityQueue* queue)
+{
+    while (!PriorityQueue_IsEmpty(queue))
+        Free(PriorityQueue_Pop(queue));
+}
+
 void PriorityQueue_Join(PriorityQueue* queue1, PriorityQueue* queue2)
 {
     assert(queue1 != NULL);
