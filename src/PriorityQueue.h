@@ -60,7 +60,7 @@ void* PriorityQueue_Pop(PriorityQueue* queue);
 void* PriorityQueue_Peek(PriorityQueue* queue);
 
 /**
- * @brief Checks if list is empty
+ * @brief Checks if queue is empty
  * 
  * @param queue pointer to a queue
  * @return 1 if empty, 0 if not empty
