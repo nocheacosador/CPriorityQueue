@@ -17,6 +17,7 @@ void PriorityQueue_Insert(PriorityQueue* queue, int priority, void* data)
 
     new->priority = priority;
     new->data = data;
+    new->next = NULL;
 
     // find where to insert node
     PriorityQueueNode* node = queue->first;
